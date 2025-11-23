@@ -13,7 +13,7 @@ function Contact() {
     setSubmitting(true);
 
     try {
-      const apiBase = 'http://localhost:5000';
+      const apiBase = 'https://portfolio-1bow.onrender.com';
       const res = await fetch(`${apiBase}/api/email/send`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

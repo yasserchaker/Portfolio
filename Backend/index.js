@@ -1,19 +1,17 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const cors = require('cors');
 // Middleware
 require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-});
+app.use(cors({
+  origin: 'https://portfolio-tau-lake-u67e4furea.vercel.app/', 
+  methods: ['GET','POST','PUT','DELETE']
+}));
 
 // Import routes
 const emailRouter = require('./routers/email');
