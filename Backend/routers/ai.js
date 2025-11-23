@@ -5,7 +5,7 @@ const router = express.Router();
 const app = express();
 
 // Load your personal data
-const personalData = JSON.parse(process.env.ABOUT_CHAKER, "utf8");
+const personalData = fs.readFileSync("./secrets/aboutChaker.JSON", "utf8");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
