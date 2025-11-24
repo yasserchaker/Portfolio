@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 app.use(cors({
-  origin: 'https://portfolio-tau-lake-u67e4furea.vercel.app/', 
+  origin: 'https://portfolio-tau-lake-u67e4furea.vercel.app', 
   methods: ['GET','POST','PUT','DELETE']
 }));
 
